@@ -617,14 +617,15 @@ Confusion Matrix:
 
 With average precision, recall, and F1-score values hovering around 0.99, the model showcases a remarkable accuracy and equilibrium in its predictions across the various classes. The detailed confusion matrix provides a deeper insight, demonstrating correct classifications (on the diagonal) and misclassifications (off-diagonal). Rows denote true classes, while columns signify predicted classes. Although there are a few instances of mislabels, the numbers are minimal, emphasizing the robustness of the model's training. Moreover, the calculated weighted mean AUC-ROC scores also reflect an exceptional performance, consistently reaching about 1.0. 
 
-<pre>
-Metric                      Value
-Precision                0.989004
-Recall                   0.987876
-F1-Score                 0.983069
-AUC-ROC                  0.999705
-Test Time (ms/sample)     2.75125
-</pre>
+### Model evaluation metrics
+| Metric                | Value     |
+|-----------------------|-----------|
+| Precision             | 0.989004  |
+| Recall                | 0.987876  |
+| F1-Score              | 0.983069  |
+| AUC-ROC               | 0.999705  |
+| Test Time (ms/sample) | 2.75125   |
+
 
 ![Some predictions](results/images/predictions.png)
 
