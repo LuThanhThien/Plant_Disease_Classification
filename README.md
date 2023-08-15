@@ -54,7 +54,13 @@ In this section, we are going to explore some aspects of the dataset. The datase
 Potato, tomato, and pepper leaves exhibit distinct characteristics that set them apart. At first, let me describe some details about the differences between leaves of Potato, Tomato and Pepper. It is worth to know the differences between these plants before jumping into explore their diseases:
 - **Potato** leaves are identifiable by their compound nature, featuring multiple leaflets arranged along a central stem. These leaflets tend to be either oval or lance-shaped, displaying shades of light to dark green and a soft texture.
 - **Tomato** leaves, on the other hand, are also compound but bear serrated leaflets, often with a medium to dark green hue. These leaves possess a rough texture due to a slight hairiness.
-- **Pepper** leaves may have either simple or compound forms, with varying shapes such as lance, elliptical, or heart-shaped. They are typically smooth-edged and sport a medium to dark green coloration. The texture of pepper leaves is notably smoother than that of tomatoes. 
-![Potato Leaves](results/images/potato_leaf.jpeg)
+- **Pepper** leaves may have either simple or compound forms, with varying shapes such as lance, elliptical, or heart-shaped. They are typically smooth-edged and sport a medium to dark green coloration. The texture of pepper leaves is notably smoother than that of tomatoes.
+<p align="center">
+  <img src="results/images/potato_leaf.jpg" alt="Potato Leaves" width="256"/>
+  <img src="results/images/tomato_leaf.jpg" alt="Tomato Leaves" width="256"/>
+  <img src="results/images/pepper_leaf.jpg" alt="Pepper Leaves" width="256"/>
+</p>
+
+
 
 
