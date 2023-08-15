@@ -586,7 +586,7 @@ The model was evaluted with test set showing high accuracy
 [0.029583344236016273, 0.9937439560890198]
 </pre>
 
-However, accuracy is not really a good metric for imbalanced dataset in this case. Thereby, precision and recall were used for evaluation, the average precision, recall and so F1-score with confusion matrix are shown in below:
+However, accuracy is not really a good metric for imbalanced dataset in this case. Thereby, precision and recall were used for evaluation. The average precision, recall and so F1-score with confusion matrix are shown in below:
 
 <pre>
   Average Precision:
@@ -615,7 +615,16 @@ Confusion Matrix:
 
 ![Confusion Matrix](results/images/cf_map.png)
 
-The average precision, recall, and F1-score values of around 0.99 indicate a high degree of accuracy and balance in the model's predictions across different classes. The confusion matrix breaks down the classification results further, showing the number of instances that were classified correctly (diagonal elements) as well as those that were misclassified (off-diagonal elements). Each row corresponds to a true class, while each column corresponds to a predicted class. The confusion matrix showed that there are some mis-labels, however negligible (only one mis-label for some classes) the model was well trained. 
+With average precision, recall, and F1-score values hovering around 0.99, the model showcases a remarkable accuracy and equilibrium in its predictions across the various classes. The detailed confusion matrix provides a deeper insight, demonstrating correct classifications (on the diagonal) and misclassifications (off-diagonal). Rows denote true classes, while columns signify predicted classes. Although there are a few instances of mislabels, the numbers are minimal, emphasizing the robustness of the model's training. Moreover, the calculated weighted mean AUC-ROC scores also reflect an exceptional performance, consistently reaching about 1.0. 
+
+<pre>
+Metric                      Value
+Precision                0.989004
+Recall                   0.987876
+F1-Score                 0.983069
+AUC-ROC                  0.999705
+Test Time (ms/sample)     2.75125
+</pre>
 
 ![Some predictions](results/images/predictions.png)
 
