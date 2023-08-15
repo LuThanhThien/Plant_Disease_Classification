@@ -31,8 +31,10 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, BatchNormalization
 from keras.layers import Conv2D, MaxPooling2D
 </pre>
+
 ## Plant Diseases Visualization
 In this section, we are going to explore some aspects of the dataset. The dataset contains exactly 20638 256x256 RGB images belonging to 15 classes:
+
 <pre>
   ['Pepper_bell_Bacterial_spot',
  'Pepper_bell_healthy',
@@ -50,16 +52,23 @@ In this section, we are going to explore some aspects of the dataset. The datase
  'Tomato_Tomato_mosaic_virus',
  'Tomato_healthy']
 </pre>
+
 ![Plant Diseases](results/images/all_classes.png)
+
 Potato, tomato, and pepper leaves exhibit distinct characteristics that set them apart. At first, let me describe some details about the differences between leaves of Potato, Tomato and Pepper. It is worth to know the differences between these plants before jumping into explore their diseases:
 - **Potato** leaves are identifiable by their compound nature, featuring multiple leaflets arranged along a central stem. These leaflets tend to be either oval or lance-shaped, displaying shades of light to dark green and a soft texture.
 - **Tomato** leaves, on the other hand, are also compound but bear serrated leaflets, often with a medium to dark green hue. These leaves possess a rough texture due to a slight hairiness.
-- **Pepper** leaves may have either simple or compound forms, with varying shapes such as lance, elliptical, or heart-shaped. They are typically smooth-edged and sport a medium to dark green coloration. The texture of pepper leaves is notably smoother than that of tomatoes.
+- **Bell Pepper** leaves may have either simple or compound forms, with varying shapes such as lance, elliptical, or heart-shaped. They are typically smooth-edged and sport a medium to dark green coloration. The texture of pepper leaves is notably smoother than that of tomatoes.
+
 <p align="center">
-  <img src="results/images/potato_leaf.jpg" alt="Potato Leaves" width="256"/>
-  <img src="results/images/tomato_leaf.jpg" alt="Tomato Leaves" width="256"/>
+  <img src="results/images/potato_leaf.jpg" style="margin-right: 10px;" alt="Potato Leaves" width="256"/>
+  <img src="results/images/tomato_leaf.jpg" style="margin-right: 10px;" alt="Tomato Leaves" width="256"/>
   <img src="results/images/pepper_leaf.jpg" alt="Pepper Leaves" width="256"/>
 </p>
+
+Additionally, we can see that there are an imbalance in the data set classes, Pepper has only 2 classes of healthy one and Baterial Spotted, Potato has 3 classes with 2 diseases are Late Blight and Early Blight while Tomato has noticeable lots of diseases (10 classes). The distribution between all 15 classes is also not equal which prove this data set is skewed:
+
+<iframe src="results/images/distribution_of_classes_interact.html" width="800" height="600">Distribution of Classes</iframe>
 
 
 
