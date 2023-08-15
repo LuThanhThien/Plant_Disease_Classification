@@ -8,16 +8,33 @@ import requests
 
 app = FastAPI()
 
-endpoint = "http://localhost:8605/v1/models/potato_model:predict"
+endpoint = "http://localhost:8601/v1/models/plant_model:predict"
 
-CLASS_NAMES = ['Early Blight', 'Late Blight', 'Healthy']
+CLASS_NAMES = ['Bell Pepper - Bacterial Spot',
+                'Bell Pepper - Healthy',
+                'Potato - Early Blight',
+                'Potato - Late Blight',
+                'Potato - Healthy',
+                'Tomato - Bacterial Spot',
+                'Tomato - Early Blight',
+                'Tomato - Late Blight',
+                'Tomato - Leaf Mold',
+                'Tomato - Septoria Leaf Epot',
+                'Tomato - Two-Spotted Spider Mite',
+                'Tomato - Target Spot',
+                'Tomato - YellowLeaf Curl Virus',
+                'Tomato - Mosaic Virus',
+                'Tomato - Healthy']
 
 @app.get('/ping')
 async def ping():
     return "Hello, sever is alive"
 
+target_size = (150,150)
+
 def file_as_image(data):
-    image = np.array(Image.open(BytesIO(data)))
+    image = Image.open(BytesIO(data))
+    image = np.array(image.resize(target_size, Image.LANCZOS))
     return image
 
 
@@ -40,8 +57,8 @@ async def predict(
     
     return {
         "Class": predict_class,
-        "Confidence": confidence
+        "Confidence": float(confidence)
     }
 
 if __name__=='__main__':
-    uvicorn.run(app, host='localhost', port=8000)
+    uvicorn.run(app, host='localhost', port=8800)

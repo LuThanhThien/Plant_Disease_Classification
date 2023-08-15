@@ -4,10 +4,12 @@ import numpy as np
 from io import BytesIO
 from PIL import Image
 import tensorflow as tf
+import os 
 
 app = FastAPI()
 
-MODEL = tf.keras.models.load_model("models/plants/2")
+
+MODEL = tf.keras.models.load_model('models/plants/2')
 
 CLASS_NAMES = ['Pepper_bell_Bacterial_spot',
                 'Pepper_bell_healthy',
@@ -41,16 +43,20 @@ async def predict(
         file: UploadFile = File(...)    
 ):
     image = file_as_image(await file.read())
+
+    image_batch = np.expand_dims(image, 0)
     
-    img_batch = np.expand_dims(image, 0)
+    predictions = MODEL.predict(image_batch)
 
-    prediction = MODEL.predict(img_batch)
+    predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
 
-    predict_class = CLASS_NAMES[np.argmax(prediction[0])]
-    confidence = np.max(prediction[0])
+    confidence = np.max(predictions[0])
+    
     return {
-        'Class': predict_class,
-        'Confidence': float(confidence)}
+        'predict': predicted_class,
+        'confidence':  float(confidence),
+        }
 
-if __name__=='__main__':
-    uvicorn.run(app, host='localhost', port=8800)
+
+if __name__=="__main__":
+    uvicorn.run(app, host="localhost", port=8800)
